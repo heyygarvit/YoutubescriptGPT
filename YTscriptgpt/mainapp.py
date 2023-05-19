@@ -15,7 +15,7 @@ os.environ['OPENAI_API_KEY'] = openai.api_key
 
 # App framework
 st.title('📝 YoutubeScript GPT')
-prompt = st.text_input('Plug in your prompt here') 
+prompt = st.text_input('Enter the Topic') 
 
 # Prompt templates
 title_template = PromptTemplate(

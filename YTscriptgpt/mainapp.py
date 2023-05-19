@@ -11,7 +11,7 @@ from langchain.utilities import WikipediaAPIWrapper
 
 openai.api_key = st.secrets['API_KEY']
 # apikey = st.secrets['API_KEY']
-# os.environ['OPENAI_API_KEY'] = apikey
+os.environ['OPENAI_API_KEY'] = openai.api_key
 
 # App framework
 st.title('📝 YoutubeScript GPT')

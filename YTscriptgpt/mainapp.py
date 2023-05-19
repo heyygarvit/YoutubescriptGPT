@@ -1,7 +1,7 @@
 # Bring in deps
 import os 
 
-
+import openai
 import streamlit as st 
 from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
@@ -9,9 +9,9 @@ from langchain.chains import LLMChain, SequentialChain
 from langchain.memory import ConversationBufferMemory
 from langchain.utilities import WikipediaAPIWrapper 
 
-
-apikey = st.secrets['API_KEY']
-os.environ['OPENAI_API_KEY'] = apikey
+openai.api_key = st.secrets['API_KEY']
+# apikey = st.secrets['API_KEY']
+# os.environ['OPENAI_API_KEY'] = apikey
 
 # App framework
 st.title('📝 YoutubeScript GPT')

@@ -1,4 +1,4 @@
-# Bring in deps
+#Dependencies
 import os 
 
 import openai
@@ -12,7 +12,7 @@ from langchain.utilities import WikipediaAPIWrapper
 openai.api_key = st.secrets['API_KEY']
 os.environ['OPENAI_API_KEY'] = openai.api_key
 
-# App framework
+# Web Ui
 st.title('📝 YoutubeScript GPT')
 prompt = st.text_input('Enter the Topic') 
 
@@ -32,14 +32,14 @@ title_memory = ConversationBufferMemory(input_key='topic', memory_key='chat_hist
 script_memory = ConversationBufferMemory(input_key='title', memory_key='chat_history')
 
 
-# Llms
+# LLms
 llm = OpenAI(temperature=0.9, max_tokens=1000) 
 title_chain = LLMChain(llm=llm, prompt=title_template, verbose=True, output_key='title', memory=title_memory)
 script_chain = LLMChain(llm=llm, prompt=script_template, verbose=True, output_key='script', memory=script_memory)
 
 wiki = WikipediaAPIWrapper()
 
-# Show stuff to the screen if there's a prompt
+# Show on screen if there's a prompt
 if prompt: 
     title = title_chain.run(prompt)
     wiki_research = wiki.run(prompt) 

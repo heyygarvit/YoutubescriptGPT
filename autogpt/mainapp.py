@@ -10,7 +10,7 @@ from langchain.memory import ConversationBufferMemory
 from langchain.utilities import WikipediaAPIWrapper 
 
 
-apikey = st.secrets['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']
+apikey = st.secrets['API_KEY']
 os.environ['OPENAI_API_KEY'] = apikey
 
 # App framework

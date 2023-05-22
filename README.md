@@ -39,7 +39,7 @@ pip install -r requirements.txt
 
 1. Obtain an API key from OpenAI. Visit the OpenAI website for more information on how to get an API key.
 
-2. Open `mainapp.py` and replace the `API_KEY` placeholder with your actual OpenAI API key or if your using streamlit you can use st.secrets to host the app without risk of leaking the api_key
+2. Open `mainapp.py` 
 
 3. Run the application using the following command:
 
